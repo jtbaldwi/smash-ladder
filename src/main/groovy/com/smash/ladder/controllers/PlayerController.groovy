@@ -21,36 +21,66 @@ class PlayerController {
     @Autowired
     PlayerService playerService
 
+    /**
+     * Create a new player object
+     * @param player
+     * @return
+     */
     @PostMapping(path = 'player')
     @ResponseBody
     ResponseEntity createPlayer(@RequestBody Player player) {
         playerService.createPlayer(player)
     }
 
+    /**
+     * Get a player object by its id
+     * @param id
+     * @return
+     */
     @GetMapping(path = 'player/{id}')
     @ResponseBody
     ResponseEntity getPlayer(@PathVariable String id) {
         playerService.getPlayer(id)
     }
 
+    /**
+     * Update an existing player object
+     * @param player
+     * @return
+     */
     @PutMapping(path = 'player')
     @ResponseBody
     ResponseEntity updatePlayer(@RequestBody Player player) {
         playerService.updatePlayer(player)
     }
 
+    /**
+     * Delete an existing player object
+     * @param id
+     * @return
+     */
     @DeleteMapping(path = 'player/{id}')
     @ResponseBody
     ResponseEntity deletePlayer(@PathVariable String id) {
         playerService.deletePlayer(id)
     }
 
+    /**
+     * Update an existing player objects score (consistent across ALL tournaments)
+     * @param id
+     * @return
+     */
     @PutMapping(path = 'player/{id}/score')
     @ResponseBody
     ResponseEntity updatePlayerWinLoss(@PathVariable String id) {
         playerService.updatePlayerWinLoss(id)
     }
 
+    /**
+     * Update an existing player objects elo (consistent across ALL tournaments)
+     * @param id
+     * @return
+     */
     @PutMapping(path = 'player/{id}/elo')
     @ResponseBody
     ResponseEntity updatePlayerElo(@PathVariable String id) {

@@ -1,5 +1,6 @@
 package com.smash.ladder.services
 
+import com.smash.ladder.data.Player
 import com.smash.ladder.data.Tournament
 import groovy.transform.CompileStatic
 import org.springframework.http.HttpStatus
@@ -23,6 +24,11 @@ class TournamentService {
     }
 
     static ResponseEntity deleteTournament(String id) {
+        new ResponseEntity(HttpStatus.OK)
+    }
+
+
+    static ResponseEntity createPlayerInTournament(Player player, String id) {
         new ResponseEntity(HttpStatus.OK)
     }
 

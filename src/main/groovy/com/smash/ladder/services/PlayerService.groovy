@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service
 @CompileStatic
 class PlayerService {
 
+    // Create a new player object
     static ResponseEntity createPlayer(Player player) {
         new ResponseEntity(HttpStatus.OK)
     }
@@ -27,6 +28,7 @@ class PlayerService {
     }
 
     static ResponseEntity updatePlayerWinLoss(String id) {
+        Player player = (Player) getPlayer(id).getBody()
         new ResponseEntity(HttpStatus.OK)
     }
 
