@@ -1,0 +1,5 @@
+Spring:
+  Application:
+    name: Smash-Ladder
+server:
+  port: 8082
