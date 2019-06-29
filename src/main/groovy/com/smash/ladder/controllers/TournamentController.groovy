@@ -36,15 +36,21 @@ class TournamentController {
         tournamentService.getTournament(id)
     }
 
-    @PutMapping(path = 'tournament/{id}')
+    @PutMapping(path = 'tournament')
     @ResponseBody
-    ResponseEntity updateTournament(@RequestBody Tournament tournament, @PathVariable String id) {
-        tournamentService.updateTournament(tournament, id)
+    ResponseEntity updateTournament(@RequestBody Tournament tournament) {
+        tournamentService.updateTournament(tournament)
     }
 
     @DeleteMapping(path = 'tournament/{id}')
     @ResponseBody
     ResponseEntity deleteTournament(@PathVariable String id) {
         tournamentService.deleteTournament(id)
+    }
+
+    @PutMapping(path = 'tournament/player/{id}')
+    @ResponseBody
+    ResponseEntity updatePlayerInTournament(@PathVariable String id) {
+        tournamentService.updatePlayerInTournament(id)
     }
 }
