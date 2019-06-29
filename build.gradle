@@ -17,6 +17,14 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.codehaus.groovy:groovy'
+
+	implementation 'com.amazonaws:aws-java-sdk-dynamodb:1.11.584'
+	implementation 'com.amazonaws:aws-java-sdk-bom:1.11.228'
+	implementation 'com.amazonaws:aws-java-sdk-s3'
+}
+
+application {
+    mainClassName 'com.smash.ladder.SmashLadderApplication'
 }
 
 application {
