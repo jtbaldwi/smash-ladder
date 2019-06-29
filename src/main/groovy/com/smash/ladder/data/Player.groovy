@@ -7,4 +7,6 @@ class Player {
     String name
 
     List<Character> mains
+
+    float elo //widely used rating algorithm that is used to rank players in many competitive games.
 }

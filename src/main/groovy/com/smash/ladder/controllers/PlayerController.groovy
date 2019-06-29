@@ -1,5 +1,6 @@
 package com.smash.ladder.controllers
 
+import com.smash.ladder.data.Match
 import com.smash.ladder.data.Player
 import com.smash.ladder.services.PlayerService
 import org.springframework.beans.factory.annotation.Autowired
@@ -51,9 +52,10 @@ class PlayerController {
         playerService.updatePlayerWinLoss(id)
     }
 
-    @PutMapping(path = 'player/{id}/elo')
+    @PutMapping(path = 'player/elo')
     @ResponseBody
-    ResponseEntity updatePlayerElo(@PathVariable String id) {
-        playerService.updatePlayerElo(id)
+    ResponseEntity updatePlayerElos(@RequestBody Match match) {
+        Match matchResults = playerService.updatePlayerElos(match)
+        ResponseEntity.ok(matchResults)
     }
 }
