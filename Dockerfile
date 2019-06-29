@@ -1,5 +1,5 @@
-FROM openjdk:7
-COPY src /usr/src/myapp
-WORKDIR /usr/src/myapp
-RUN javac Main.java
-CMD ["java", "Main"]
+FROM java
+COPY build/libs libs
+
+WORKDIR libs
+CMD ["java", "-jar", "smash-ladder.jar"]

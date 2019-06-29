@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.1.6.RELEASE'
 	id 'groovy'
+    id 'application'
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -16,4 +17,12 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.codehaus.groovy:groovy'
+}
+
+application {
+    mainClassName 'com.smash.ladder.SmashLadderApplication'
+}
+
+bootJar {
+    archiveName 'smash-ladder.jar'
 }
