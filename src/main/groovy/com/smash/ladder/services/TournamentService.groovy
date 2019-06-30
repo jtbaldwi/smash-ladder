@@ -18,11 +18,15 @@ class TournamentService {
         new ResponseEntity(HttpStatus.OK)
     }
 
-    static ResponseEntity updateTournament(Tournament tournament, String id) {
+    static ResponseEntity updateTournament(Tournament tournament) {
         new ResponseEntity(HttpStatus.OK)
     }
 
     static ResponseEntity deleteTournament(String id) {
+        new ResponseEntity(HttpStatus.OK)
+    }
+
+    static ResponseEntity updatePlayerInTournament(String id) {
         new ResponseEntity(HttpStatus.OK)
     }
 }
